@@ -4,7 +4,7 @@
         $scope.atualizando = true;
         $scope.faturamentos = [];
 
-        AppService.chamarEndpoint('TrazerFaturamento', chamada, function (retorno) {
+        AppService.chamarEndpoint('TrazerFaturamento', undefined, function (retorno) {
             $scope.faturamentos = retorno.data;
             $scope.atualizando = false;
         }, function () {
@@ -33,4 +33,6 @@
             window.myPie = new Chart(ctx).Pie(pieData);
         };
     }
+
+    //$scope.abc = 1233333;
 });

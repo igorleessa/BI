@@ -1,6 +1,6 @@
 ﻿var app = angular.module("bi-app");
 
-app.factory("AppService", function ($location, $window, $templateCache, $http, $cookies, MsgService, ColorService) {
+app.factory("AppService", function ($location, $window, $templateCache, $http) {
 
     var usuarioLogado = {};
 

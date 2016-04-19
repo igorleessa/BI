@@ -1,10 +1,10 @@
-﻿angular.module('bi-app', ['ngRoute', 'ui.bootstrap', 'ngToast', 'ngCookies', 'ng-sweet-alert', 'angularMoment', 'ngTable', 'treeGrid', 'ngTagsInput', 'ngHandsontable']).
+﻿angular.module('bi-app', ['ngRoute', 'ui.bootstrap']).
     config(function ($routeProvider, $locationProvider) {
         $routeProvider.
 
             //CORE ROUTING
-        when('/index', { templateUrl:'core/views/login.html' }).
-            otherwise({ redirectTo: '/index', templateUrl: '~/index.html' });
+        when('/graficos', { templateUrl:'BI/FaturamentoIvel/views/faturamentoIvel.html' }).
+            otherwise({ redirectTo: '/index', templateUrl: 'BI/FaturamentoIvel/views/faturamentoIvel.html' });
 
     }).
 
@@ -16,4 +16,3 @@ function MainController($scope) {
 
 
 }
-;

@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\bi-app.js" />
+    <Content Include="assets\Content\sweetalert.css" />
     <Content Include="assets\scripts\angular-spinner.js" />
     <Content Include="assets\scripts\angular-translate.js" />
     <Content Include="assets\scripts\angular-ui-router.js" />
@@ -116,14 +117,13 @@
     <Content Include="assets\scripts\Chart.js\src\Chart.Line.js" />
     <Content Include="assets\scripts\Chart.js\src\Chart.PolarArea.js" />
     <Content Include="assets\scripts\Chart.js\src\Chart.Radar.js" />
+    <Content Include="assets\scripts\sweetalert.min.js" />
     <Content Include="assets\scripts\ui-bootstrap.js" />
     <Content Include="BI\FaturamentoIVEL\controllers\faturamentoIvel.js" />
+    <Content Include="BI\FaturamentoIVEL\views\faturamentoIvel.html" />
     <Content Include="core\controllers\login.js" />
     <Content Include="core\services\app.js" />
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="assets\scripts\version.json" />
     <Content Include="assets\scripts\errors.json" />
     <Content Include="assets\scripts\angular.min.js.map" />
@@ -987,9 +987,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BI\FaturamentoIVEL\views\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
