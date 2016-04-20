@@ -99,6 +99,11 @@
     <Content Include="assets\Chart-AngularJs\angular-chart.js" />
     <Content Include="assets\Chart-AngularJs\angular-chart.min.css" />
     <Content Include="assets\Chart-AngularJs\angular-chart.min.js" />
+    <Content Include="assets\ChartistJs\chartist.css" />
+    <Content Include="assets\ChartistJs\chartist.js" />
+    <Content Include="assets\ChartistJs\chartist.min.css" />
+    <Content Include="assets\ChartistJs\chartist.min.js" />
+    <Content Include="assets\ChartistJs\teste.html" />
     <Content Include="assets\Content\sweetalert.css" />
     <Content Include="assets\scripts\angular-spinner.js" />
     <Content Include="assets\scripts\angular-translate.js" />
@@ -129,6 +134,7 @@
     <Content Include="BI\FaturamentoIVEL\views\grafico-pizza.html" />
     <Content Include="core\controllers\login.js" />
     <Content Include="core\services\app.js" />
+    <Content Include="Grafico.html" />
     <Content Include="packages.config" />
     <Content Include="assets\scripts\version.json" />
     <Content Include="assets\scripts\errors.json" />
@@ -170,6 +176,10 @@
     <Content Include="assets\scripts\Chart.js\README.md" />
     <Content Include="assets\Chart-AngularJs\angular-chart.min.css.map" />
     <Content Include="assets\Chart-AngularJs\angular-chart.min.js.map" />
+    <Content Include="assets\ChartistJs\chartist.css.map" />
+    <Content Include="assets\ChartistJs\chartist.min.js.map" />
+    <Content Include="assets\ChartistJs\scss\chartist.scss" />
+    <Content Include="assets\ChartistJs\scss\settings\_chartist-settings.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

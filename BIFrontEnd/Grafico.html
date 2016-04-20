@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="assets/ChartistJs/chartist.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="ct-chart ct-perfect-fourth"></div>
+
+    <script src="assets/ChartistJs/chartist.min.js">
+        var data = {
+            series: [5, 3, 4]
+        };
+
+        var sum = function (a, b) { return a + b };
+
+        new Chartist.Pie('.ct-chart', data, {
+            labelInterpolationFnc: function (value) {
+                return Math.round(value / data.series.reduce(sum) * 100) + '%';
+            }
+        });
+
+    </script>
+</body>
+</html>
