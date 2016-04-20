@@ -103,5 +103,39 @@ namespace BIWebServices
             }
         }
 
+
+
+        //[WebMethod]
+        //[ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+        //public void TrazerPizzaFaturamento(string JsonChamada)
+        //{
+        //    SerializerFO Serializer = new SerializerFO();
+
+        //    var SQL = new LibOrgm.SQL();
+        //    var cn = new ADODB.Connection();
+
+        //    try
+        //    {
+
+        //        Context.Response.Clear();
+        //        Context.Response.ContentType = "application/json";
+        //        SQL.AbrirConexao(cn);
+
+        //        var TrazerFaturamento = PizzaFaturamentoIVELFO.ListarUltimosFaturamentos(JsonChamada, cn);
+        //        Context.Response.Write(Serializer.Serializador(TrazerFaturamento));
+        //    }
+        //    catch (Exception Ex)
+        //    {
+
+        //        Context.Response.Write(TratarErro(Ex));
+        //    }
+        //    finally
+        //    {
+        //        SQL.FecharConexao(cn);
+        //    }
+        //}
+
+
+
     }
 }

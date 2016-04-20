@@ -4,35 +4,47 @@
         $scope.atualizando = true;
         $scope.faturamentos = [];
 
-        AppService.chamarEndpoint('TrazerFaturamento', undefined, function (retorno) {
+        AppService.chamarEndpoint('TrazerFaturamento', [],function (retorno) {
             $scope.faturamentos = retorno.data;
+            //$scope.listFaturamentos = retorno.data;
+
+            Array.prototype.carregaDados = function (dados) {
+                return this.map(function (obj) {
+                    return obj[dados];
+                });
+            }
+
+            //$scope.labels = $scope.faturamentos.carregaDados('Operacao');
+            //$scope.data = $scope.faturamentos.carregaDados('ValorNF');
+           
+
+
+           
+            var barChartData = {
+                labels: $scope.faturamentos.carregaDados('Operacao'),
+                datasets: [
+                    {
+                        fillColor: "rgba(220,220,220,0.5)",
+                        strokeColor: "rgba(220,220,220,0.8)",
+                        highlightFill: "rgba(220,220,220,0.75)",
+                        highlightStroke: "rgba(220,220,220,1)",
+                        data: $scope.faturamentos.carregaDados('ValorNF')
+                    },
+                ]
+            }
+
+     
+            var ctx1 = document.getElementById("canvas").getContext("2d");
+            window.myBar = new Chart(ctx1).Bar(barChartData, {
+                responsive: true
+            });
+            
+
             $scope.atualizando = false;
         }, function () {
             swal('Erro ao carregar faturamentos','error');
         });
     };
 
-    Array.prototype.carregaDados = function (dados) {
-        return this.map(function (obj) {
-            return obj[dados];
-        });
-    }
-
-    var carregarFaturamento = document.getElementsByClassName('TrazerFaturamento');
-
-    for (var i = 0, len = carregarFaturamento.length; i < len; i++) {
-        var pieData = [
-        {
-            value: dados.carregaDados('Operacao'),
-            color: dados.carregaDados('CodHex'),
-            label: dados.carregaDados('ValorNF')
-        }];
-
-        window.onload = function () {
-            var ctx = document.getElementById("chart-area").getContext("2d");
-            window.myPie = new Chart(ctx).Pie(pieData);
-        };
-    }
-
-    //$scope.abc = 1233333;
+    $scope.listFaturamentos();
 });

@@ -103,7 +103,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -124,6 +126,7 @@
     <Compile Include="BI\FaturamentoIVEL\BusinessObjects\FatoFaturamentoIVELBO.cs" />
     <Compile Include="BI\FaturamentoIVEL\DataAccess\FatoFaturamentoIVELDA.cs" />
     <Compile Include="BI\FaturamentoIVEL\FunctionObjects\FatoFaturamentoIVELFO.cs" />
+    <Compile Include="BI\FaturamentoIVEL\FunctionObjects\PizzaFaturamentoIVELFO.cs" />
     <Compile Include="BI\FaturamentoIVEL\WebObjects\FatoFaturamentoIVELWO.cs" />
     <Compile Include="BI\Usuario\BusinessObjects\UsuariosBO.cs" />
     <Compile Include="BI\Usuario\DataAccess\UsuariosDA.cs" />

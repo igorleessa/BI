@@ -9,9 +9,9 @@ namespace BIWebServices.BI.FaturamentoIVEL
     public class FatoFaturamentoIVELWO
     {
         public string Operacao { get; set; }
-        public string AnoMes { get; set; }
+        //public string AnoMes { get; set; }
         public float ValorNF { get; set; }
-        public bool TradeMarketing { get; set; }
+        //public bool TradeMarketing { get; set; }
         public string CodHex { get; set; }
     }
 }

@@ -3,7 +3,7 @@
         $routeProvider.
 
             //CORE ROUTING
-        when('/graficos', { templateUrl:'BI/FaturamentoIvel/views/faturamentoIvel.html' }).
+        when('/graficos', { templateUrl: 'BI/FaturamentoIvel/views/faturamentoIvel.html' }).
             otherwise({ redirectTo: '/index', templateUrl: 'BI/FaturamentoIvel/views/faturamentoIvel.html' });
 
     }).

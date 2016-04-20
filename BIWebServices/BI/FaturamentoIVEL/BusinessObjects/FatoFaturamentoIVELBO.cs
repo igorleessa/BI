@@ -12,5 +12,6 @@ namespace BIWebServices.BI.FaturamentoIVEL
         public decimal ValorNF { get; set; }
         public bool TradeMarketing { get; set; }
         public string CodHex { get; set; }
+        public string Highlight { get; set; }
     }
 }

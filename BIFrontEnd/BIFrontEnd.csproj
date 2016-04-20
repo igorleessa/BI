@@ -95,6 +95,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\bi-app.js" />
+    <Content Include="assets\Chart-AngularJs\angular-chart.css" />
+    <Content Include="assets\Chart-AngularJs\angular-chart.js" />
+    <Content Include="assets\Chart-AngularJs\angular-chart.min.css" />
+    <Content Include="assets\Chart-AngularJs\angular-chart.min.js" />
     <Content Include="assets\Content\sweetalert.css" />
     <Content Include="assets\scripts\angular-spinner.js" />
     <Content Include="assets\scripts\angular-translate.js" />
@@ -120,7 +124,9 @@
     <Content Include="assets\scripts\sweetalert.min.js" />
     <Content Include="assets\scripts\ui-bootstrap.js" />
     <Content Include="BI\FaturamentoIVEL\controllers\faturamentoIvel.js" />
+    <Content Include="BI\FaturamentoIVEL\controllers\grafico-pizza.js" />
     <Content Include="BI\FaturamentoIVEL\views\faturamentoIvel.html" />
+    <Content Include="BI\FaturamentoIVEL\views\grafico-pizza.html" />
     <Content Include="core\controllers\login.js" />
     <Content Include="core\services\app.js" />
     <Content Include="packages.config" />
@@ -162,6 +168,8 @@
     <Content Include="assets\scripts\Chart.js\LICENSE.md" />
     <Content Include="assets\scripts\Chart.js\package.json" />
     <Content Include="assets\scripts\Chart.js\README.md" />
+    <Content Include="assets\Chart-AngularJs\angular-chart.min.css.map" />
+    <Content Include="assets\Chart-AngularJs\angular-chart.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
