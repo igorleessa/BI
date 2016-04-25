@@ -13,12 +13,21 @@
                 });
             }
 
-            var pieData = $scope.faturamentos.carregaDados;
 
-            window.onload = function () {
-                var ctx = document.getElementById("canvas").getContext("2d");
-                window.myPie = new Chart(ctx).Pie(pieData);
-            };
+            AmCharts.makeChart("chartdiv", {
+                "type": "pie",
+                "dataProvider": $scope.faturamentos = retorno.data,
+                "titleField": "Operacao",
+                "valueField": "ValorNF",
+                "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+                "minRadius": 150,
+                "legend": {
+                    "align": "center",
+                    "markerType": "circle"
+                }
+
+            });
+            
 
             //var barChartData = {
             //    labels: $scope.faturamentos.carregaDados('Operacao'),

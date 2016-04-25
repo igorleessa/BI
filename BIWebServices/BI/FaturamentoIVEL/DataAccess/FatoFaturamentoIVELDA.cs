@@ -1,6 +1,7 @@
 ﻿using ADODB;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 
@@ -14,20 +15,23 @@ namespace BIWebServices.BI.FaturamentoIVEL
 
             var RsFaturamento = new Recordset();
             int Cont = 0;
-            int CountCor = 1;
-            int CountHighlight = 1;
+           // int CountCor = 1;
+           // int CountHighlight = 1;
             try
             {
-                RsFaturamento.Open(String.Format("SELECT Operacao, AnoMes, TradeMarketing, SUM(ValorNF)AS ValorTotal FROM dbo.FatoFaturamentoIVEL WHERE TradeMarketing = 0  and AnoMes = '2016/04' GROUP BY Operacao, AnoMes, TradeMarketing ORDER BY SUM(ValorNF) DESC", Operacao), Cn, CursorTypeEnum.adOpenStatic, LockTypeEnum.adLockReadOnly);
+                //RsFaturamento.Open(String.Format("SELECT Operacao, AnoMes, TradeMarketing, SUM(ValorNF)AS ValorTotal FROM dbo.FatoFaturamentoIVEL WHERE TradeMarketing = 0  and AnoMes = '2016/04' GROUP BY Operacao, AnoMes, TradeMarketing ORDER BY SUM(ValorNF) DESC", Operacao), Cn, CursorTypeEnum.adOpenStatic, LockTypeEnum.adLockReadOnly);
+                RsFaturamento.Open(String.Format("SELECT Operacao, SUM(ValorNF)AS ValorTotal FROM dbo.FatoFaturamentoIVEL WHERE TradeMarketing = 0  and AnoMes = '2016/04' GROUP BY Operacao, AnoMes, TradeMarketing ORDER BY SUM(ValorNF) DESC", Operacao), Cn, CursorTypeEnum.adOpenStatic, LockTypeEnum.adLockReadOnly);
                 var ArrayRetorno = new FatoFaturamentoIVELBO[RsFaturamento.RecordCount];
                 while (!RsFaturamento.EOF)
                 {
                     FatoFaturamentoIVELBO Faturamento = new FatoFaturamentoIVELBO();
                     Faturamento.Operacao = RsFaturamento.Fields["Operacao"].Value.ToString();
                     //Faturamento.AnoMes = RsFaturamento.Fields["AnoMes"].Value.ToString();
-                    Faturamento.ValorNF = decimal.Parse(RsFaturamento.Fields["ValorTotal"].Value.ToString());
-                    Faturamento.CodHex = GetCor(CountCor++, ref Cn);
-                    Faturamento.Highlight = GetHighlight(CountHighlight++, ref Cn);
+                    Faturamento.ValorNF = Math.Round(decimal.Parse(RsFaturamento.Fields["ValorTotal"].Value.ToString()), 2);
+                    //decimal.Parse(RsFaturamento.Fields["ValorTotal"].Value).ToString("#.##");
+                    //decimal.Parse(RsFaturamento.Fields["ValorTotal"].Value.ToString("#.##"));
+                    //Faturamento.CodHex = GetCor(CountCor++, ref Cn);
+                    //Faturamento.Highlight = GetHighlight(CountHighlight++, ref Cn);
 
                     ArrayRetorno[Cont] = Faturamento;
 

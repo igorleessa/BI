@@ -12,6 +12,6 @@ namespace BIWebServices.BI.FaturamentoIVEL
         //public string AnoMes { get; set; }
         public float ValorNF { get; set; }
         //public bool TradeMarketing { get; set; }
-        public string CodHex { get; set; }
+        //public string CodHex { get; set; }
     }
 }
